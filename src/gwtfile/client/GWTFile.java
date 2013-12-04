@@ -1,6 +1,8 @@
 package gwtfile.client;
 
 import gwtfile.shared.FieldVerifier;
+
+import com.gargoylesoftware.htmlunit.javascript.host.Window;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -21,6 +23,8 @@ import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.PushButton;
 import com.google.gwt.user.client.ui.ScrollPanel;
+import com.google.gwt.user.client.ui.FormPanel;
+import com.google.gwt.user.client.ui.FileUpload;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -45,34 +49,26 @@ public class GWTFile implements EntryPoint {
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
+		Login login = new Login();
+		login.show();
 		RootLayoutPanel panel = RootLayoutPanel.get();
 		
 		Label lblNewLabel = new Label("File Manager");
 		lblNewLabel.setStyleName("title");
 		panel.add(lblNewLabel);
-		panel.setWidgetLeftWidth(lblNewLabel, 0.0, Unit.PX, 517.0, Unit.PX);
+		panel.setWidgetLeftRight(lblNewLabel, 0.0, Unit.PX, 0.0, Unit.PX);
 		panel.setWidgetTopHeight(lblNewLabel, 0.0, Unit.PX, 31.0, Unit.PX);
-		
-		PushButton pshbtnNewButton_1 = new PushButton("delet");
-		panel.add(pshbtnNewButton_1);
-		panel.setWidgetLeftWidth(pshbtnNewButton_1, 93.0, Unit.PX, 77.0, Unit.PX);
-		panel.setWidgetTopHeight(pshbtnNewButton_1, 47.0, Unit.PX, 26.0, Unit.PX);
 		
 		Label lblC = new Label("C:");
 		lblC.setStyleName("address");
 		panel.add(lblC);
-		panel.setWidgetLeftWidth(lblC, 10.0, Unit.PX, 495.0, Unit.PX);
+		panel.setWidgetLeftRight(lblC, 10.0, Unit.PX, 12.0, Unit.PX);
 		panel.setWidgetTopHeight(lblC, 86.0, Unit.PX, 26.0, Unit.PX);
-		
-		pshbtnAddFile = new PushButton("add file");
-		panel.add(pshbtnAddFile);
-		panel.setWidgetLeftWidth(pshbtnAddFile, 10.0, Unit.PX, 77.0, Unit.PX);
-		panel.setWidgetTopHeight(pshbtnAddFile, 47.0, Unit.PX, 26.0, Unit.PX);
 		
 		ScrollPanel scrollPanel = new ScrollPanel();
 		panel.add(scrollPanel);
-		panel.setWidgetLeftWidth(scrollPanel, 10.0, Unit.PX, 495.0, Unit.PX);
-		panel.setWidgetTopHeight(scrollPanel, 128.0, Unit.PX, 238.0, Unit.PX);
+		panel.setWidgetLeftRight(scrollPanel, 10.0, Unit.PX, 12.0, Unit.PX);
+		panel.setWidgetTopBottom(scrollPanel, 128.0, Unit.PX, 15.0, Unit.PX);
 		
 		FlexTable flexTable = new FlexTable();
 		flexTable.setStyleName("filetable");
@@ -81,8 +77,24 @@ public class GWTFile implements EntryPoint {
 		
 		PushButton pshbtnNew = new PushButton("new folder");
 		panel.add(pshbtnNew);
-		panel.setWidgetLeftWidth(pshbtnNew, 176.0, Unit.PX, 127.0, Unit.PX);
+		panel.setWidgetRightWidth(pshbtnNew, 12.0, Unit.PX, 112.0, Unit.PX);
 		panel.setWidgetTopHeight(pshbtnNew, 47.0, Unit.PX, 26.0, Unit.PX);
+		
+		FormPanel formPanel = new FormPanel();
+		panel.add(formPanel);
+		panel.setWidgetLeftRight(formPanel, 10.0, Unit.PX, 130.0, Unit.PX);
+		panel.setWidgetTopHeight(formPanel, 43.0, Unit.PX, 37.0, Unit.PX);
+		
+		FlexTable flexTable_1 = new FlexTable();
+		formPanel.setWidget(flexTable_1);
+		flexTable_1.setSize("100%", "100%");
+		
+		FileUpload fileUpload = new FileUpload();
+		flexTable_1.setWidget(0, 0, fileUpload);
+		fileUpload.setWidth("282px");
+		
+		pshbtnAddFile = new PushButton("add file");
+		flexTable_1.setWidget(0, 1, pshbtnAddFile);
 	};
 
 		// Create a handler for the sendButton and nameField

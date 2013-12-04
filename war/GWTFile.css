@@ -63,15 +63,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0349a5', end
 
 }
 .address {
-	border-top: double skyblue;
-	border-right: groove skyblue;
-	border-bottom: groove skyblue;
-	border-left: double skyblue;
+	border-top: groove skyblue;
+	border-right: double skyblue;
+	border-bottom: double skyblue;
+	border-left: groove skyblue;
 }
 .add button {
 }
 .filetable {
 border: 1px solid black;
+background: -moz-linear-gradient(top,  rgba(232,232,232,0.05) 0%, rgba(125,185,232,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(232,232,232,0.05)), color-stop(100%,rgba(125,185,232,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(232,232,232,0.05) 0%,rgba(125,185,232,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(232,232,232,0.05) 0%,rgba(125,185,232,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(232,232,232,0.05) 0%,rgba(125,185,232,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(232,232,232,0.05) 0%,rgba(125,185,232,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0de8e8e8', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+
 }
 .filetable tr:nth-child(even) {background: #CCC}
 .filetable tr:nth-child(odd) {background: #FFF}
@@ -116,4 +124,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db3f2', end
 	vertical-align: baseline;
 	text-align: center;
 /* IE6-9 */
+}
+.gwt-FileUpload {
+	border-top: groove skyblue;
+	border-right: double skyblue;
+	border-bottom: double skyblue;
+	border-left: groove skyblue;
 }

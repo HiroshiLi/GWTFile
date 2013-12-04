@@ -1,50 +1,55 @@
 package gwtfile.client;
 
-import com.google.gwt.core.client.EntryPoint;
-import com.google.gwt.user.client.ui.RootLayoutPanel;
+import com.google.gwt.user.client.ui.DialogBox;
+import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.PushButton;
-import com.google.gwt.user.client.ui.Button;
 
-public class Login implements EntryPoint {
 
-	@Override
-	public void onModuleLoad() {
-		// TODO Auto-generated method stub
-		RootLayoutPanel rootLayoutPanel = RootLayoutPanel.get();
+
+public class Login extends DialogBox {
+	public Login() {
 		
-		Label lblNewLabel = new Label("Login");
-		lblNewLabel.setStyleName("title");
-		rootLayoutPanel.add(lblNewLabel);
-		rootLayoutPanel.setWidgetLeftWidth(lblNewLabel, 0.0, Unit.PX, 363.0, Unit.PX);
-		rootLayoutPanel.setWidgetTopHeight(lblNewLabel, 0.0, Unit.PX, 30.0, Unit.PX);
+		LayoutPanel layoutPanel = new LayoutPanel();
+		setWidget(layoutPanel);
+		layoutPanel.setSize("373px", "122px");
+		
+		Label lblLogin = new Label("Login");
+		lblLogin.setStyleName("title");
+		layoutPanel.add(lblLogin);
+		layoutPanel.setWidgetLeftRight(lblLogin, 0.0, Unit.PX, -2.0, Unit.PX);
+		layoutPanel.setWidgetTopHeight(lblLogin, 0.0, Unit.PX, 28.0, Unit.PX);
 		
 		Label lblUserId = new Label("User ID");
-		rootLayoutPanel.add(lblUserId);
-		rootLayoutPanel.setWidgetLeftWidth(lblUserId, 11.0, Unit.PX, 56.0, Unit.PX);
-		rootLayoutPanel.setWidgetTopHeight(lblUserId, 64.0, Unit.PX, 18.0, Unit.PX);
+		layoutPanel.add(lblUserId);
+		layoutPanel.setWidgetLeftWidth(lblUserId, 10.0, Unit.PX, 56.0, Unit.PX);
+		layoutPanel.setWidgetTopHeight(lblUserId, 50.0, Unit.PX, 18.0, Unit.PX);
 		
 		Label lblPassword = new Label("Password");
-		rootLayoutPanel.add(lblPassword);
-		rootLayoutPanel.setWidgetLeftWidth(lblPassword, 11.0, Unit.PX, 56.0, Unit.PX);
-		rootLayoutPanel.setWidgetTopHeight(lblPassword, 113.0, Unit.PX, 18.0, Unit.PX);
+		layoutPanel.add(lblPassword);
+		layoutPanel.setWidgetLeftWidth(lblPassword, 10.0, Unit.PX, 56.0, Unit.PX);
+		layoutPanel.setWidgetTopHeight(lblPassword, 90.0, Unit.PX, 18.0, Unit.PX);
 		
 		TextBox textBox = new TextBox();
-		rootLayoutPanel.add(textBox);
-		rootLayoutPanel.setWidgetLeftWidth(textBox, 73.0, Unit.PX, 192.0, Unit.PX);
-		rootLayoutPanel.setWidgetTopHeight(textBox, 48.0, Unit.PX, 34.0, Unit.PX);
+		layoutPanel.add(textBox);
+		layoutPanel.setWidgetLeftWidth(textBox, 72.0, Unit.PX, 208.0, Unit.PX);
+		layoutPanel.setWidgetTopHeight(textBox, 34.0, Unit.PX, 34.0, Unit.PX);
 		
 		TextBox textBox_1 = new TextBox();
-		rootLayoutPanel.add(textBox_1);
-		rootLayoutPanel.setWidgetLeftWidth(textBox_1, 73.0, Unit.PX, 192.0, Unit.PX);
-		rootLayoutPanel.setWidgetTopHeight(textBox_1, 97.0, Unit.PX, 34.0, Unit.PX);
+		layoutPanel.add(textBox_1);
+		layoutPanel.setWidgetLeftWidth(textBox_1, 72.0, Unit.PX, 208.0, Unit.PX);
+		layoutPanel.setWidgetTopHeight(textBox_1, 74.0, Unit.PX, 34.0, Unit.PX);
 		
-		PushButton pshbtnNewButton = new PushButton("New button");
-		pshbtnNewButton.setHTML("Login");
-		rootLayoutPanel.add(pshbtnNewButton);
-		rootLayoutPanel.setWidgetLeftWidth(pshbtnNewButton, 271.0, Unit.PX, 77.0, Unit.PX);
-		rootLayoutPanel.setWidgetTopHeight(pshbtnNewButton, 48.0, Unit.PX, 83.0, Unit.PX);
+		PushButton pshbtnNewButton = new PushButton("Login");
+		layoutPanel.add(pshbtnNewButton);
+		layoutPanel.setWidgetLeftWidth(pshbtnNewButton, 286.0, Unit.PX, 77.0, Unit.PX);
+		layoutPanel.setWidgetTopHeight(pshbtnNewButton, 34.0, Unit.PX, 74.0, Unit.PX);
+		onModuleLoad();
+	}
+
+	public void onModuleLoad() {
+		
 	}
 }
