@@ -103,16 +103,14 @@ public class GWTFile implements EntryPoint {
 			 * Fired when the user clicks on the sendButton.
 			 */
 			public void onClick(ClickEvent event) {
-				sendNameToServer();
+				
 			}
 
 			/**
 			 * Fired when the user types in the nameField.
 			 */
 			public void onKeyUp(KeyUpEvent event) {
-				if (event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
-					sendNameToServer();
-				}
+				
 			}
 
 			/**
